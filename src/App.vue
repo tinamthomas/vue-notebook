@@ -37,20 +37,24 @@ import { ref, watch } from 'vue'
 
 const items = [
   {
-    title: 'Foo',
-    value: 'foo',
+    title: 'Status Tracker',
+    value: 'status-tracker',
   },
   {
-    title: 'Bar',
-    value: 'bar',
+    title: 'Capture Photo',
+    value: 'photo',
   },
   {
-    title: 'Fizz',
-    value: 'fizz',
+    title: 'Todo List',
+    value: 'todo',
   },
   {
-    title: 'Buzz',
-    value: 'buzz',
+    title: 'Tic Tac Toc',
+    value: 'tic-tac-toe',
+  },
+  {
+    title: 'About',
+    value: 'about',
   },
 ]
 
