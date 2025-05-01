@@ -2,7 +2,7 @@
   <v-card>
     <v-layout>
       <v-app-bar color="primary">
-        <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon variant="text"></v-app-bar-nav-icon>
 
         <v-toolbar-title>My files</v-toolbar-title>
 
@@ -14,18 +14,11 @@
 
         <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
       </v-app-bar>
-
-      <v-navigation-drawer
-        v-model="drawer"
-        :location="$vuetify.display.mobile ? 'bottom' : undefined"
-        temporary
-      >
-        <v-list :items="items"></v-list>
-      </v-navigation-drawer>
-
+      <SideNav />
       <v-main style="height: 500px">
         <v-card-text>
           The navigation drawer will appear from the bottom on smaller size screens.
+          <router-view />
         </v-card-text>
       </v-main>
     </v-layout>
@@ -33,35 +26,5 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-
-const items = [
-  {
-    title: 'Status Tracker',
-    value: 'status-tracker',
-  },
-  {
-    title: 'Capture Photo',
-    value: 'photo',
-  },
-  {
-    title: 'Todo List',
-    value: 'todo',
-  },
-  {
-    title: 'Tic Tac Toc',
-    value: 'tic-tac-toe',
-  },
-  {
-    title: 'About',
-    value: 'about',
-  },
-]
-
-const drawer = ref(false)
-const group = ref(null)
-
-watch(group, () => {
-  drawer.value = false
-})
+import SideNav from './components/SideNav.vue'
 </script>
