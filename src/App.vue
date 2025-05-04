@@ -16,10 +16,9 @@
       </v-app-bar>
       <SideNav />
       <v-main style="height: 500px">
-        <v-card-text>
-          The navigation drawer will appear from the bottom on smaller size screens.
+        <div style="margin: 15px">
           <router-view />
-        </v-card-text>
+        </div>
       </v-main>
     </v-layout>
   </v-card>
